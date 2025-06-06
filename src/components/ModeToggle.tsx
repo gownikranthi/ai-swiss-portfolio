@@ -6,19 +6,12 @@ import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 
 export function ModeToggle() {
-  const { theme, setTheme } = React.useState<string>("light")
+  const { theme, setTheme } = useTheme()
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light")
-    document.documentElement.classList.toggle("dark")
   }
 
   return (
